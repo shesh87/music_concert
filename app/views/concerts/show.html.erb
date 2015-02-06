@@ -1,1 +1,14 @@
-<h1>This is the new shit.</h1>
+<% if flash[:notice] %>
+	<% flash[:notice] %>
+<% end %>
+
+<%= link_to("New Concert", concerts_new_path) %>
+
+<h1><%= @concert.artist %></h1>
+
+
+<p><%= @concert.date.strftime("%m/%d/%Y") %></p>
+<p><%= @concert.venue %></p>
+<p><%= @concert.city %></p>
+<p>$<%= @concert.ticket %></p>
+<p><%= @concert.description %></p>

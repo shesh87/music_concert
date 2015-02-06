@@ -1,5 +1,15 @@
 <h1>Create Some Shit</h1>
 
+
+<% if flash[:errors] %>
+    <ul>
+      <% @concert.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+<% end %>
+
+
 <%= form_for (@concert) do |f| %>
   <%= f.label :date %>
   <%= f.date_field :date %>
