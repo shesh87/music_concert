@@ -1,1 +1,10 @@
-<h1>This is the Index page.</h1>
+<h2>Upcoming Shows</h2>
+
+<ul>
+	<% @concerts.each do |show|%>
+		<li>
+			<%= show.date.strftime("%m/%d/%Y") %> 
+			- <%= link_to(show.artist + "@" + show.city, new_concert_path(show.id))%>
+		</li>
+	<% end %>
+</ul>

@@ -2,9 +2,7 @@
 	<% flash[:notice] %>
 <% end %>
 
-<%= link_to("New Concert", concerts_new_path) %>
-
-<h1><%= @concert.artist %></h1>
+<h2><%= @concert.artist %></h2>
 
 
 <p><%= @concert.date.strftime("%m/%d/%Y") %></p>
