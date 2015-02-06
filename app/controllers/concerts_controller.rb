@@ -1,6 +1,9 @@
 class ConcertsController < ApplicationController
 
 	def home
+		@concerts = Concert.all
+		@date = DateTime.now
+		@today_concerts = @concerts.concerts_for(@date)
 		render "home"
 	end
 

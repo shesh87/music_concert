@@ -8,4 +8,8 @@ class Concert < ActiveRecord::Base
 	# validates :ticket, only_integer: true
 	validates :description, presence: true
 
+	def self.concerts_for(date)
+		where(date: date.utc.beginning_of_day..date.utc.end_of_day)
+	end
+
 end

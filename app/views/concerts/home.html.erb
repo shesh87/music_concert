@@ -1,0 +1,7 @@
+<h2>Today's Concerts</h2>
+
+<ul>
+	<% @today_concerts.each do |show| %>
+		<li><%= link_to(show.artist + " @ " + show.date.strftime("%H:%M%P"), new_concert_path(show.id))%></li>
+	<% end %>
+</ul>
