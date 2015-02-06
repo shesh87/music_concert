@@ -3,7 +3,8 @@ class ConcertsController < ApplicationController
 	def home
 		@concerts = Concert.all
 		@date = DateTime.now
-		@today_concerts = @concerts.concerts_for(@date)
+		@today_concerts = @concerts.concerts_today(@date)
+		@month_concerts = @concerts.concerts_month(@date)
 		render "home"
 	end
 
@@ -33,7 +34,7 @@ class ConcertsController < ApplicationController
 
 	private
 		def concert_params
-			params.require(:concert).permit(:artist, :date, :venue, :city, :ticket, :description)
+			params.require(:concert).permit(:artist, :showdate, :showtime, :venue, :city, :ticket, :description)
 		end
 
 end

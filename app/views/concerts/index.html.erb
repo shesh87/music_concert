@@ -3,7 +3,7 @@
 <ul>
 	<% @concerts.each do |show|%>
 		<li>
-			<%= show.date.strftime("%m/%d/%Y") %> 
+			<%= show.showdate.strftime("%m/%d/%Y") %> 
 			- <%= link_to(show.artist + " @ " + show.city, new_concert_path(show.id))%>
 		</li>
 	<% end %>

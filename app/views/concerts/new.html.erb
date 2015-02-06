@@ -11,8 +11,11 @@
 
 
 <%= form_for (@concert) do |f| %>
-  <%= f.label :date %>
-  <%= f.date_field :date %>
+  <%= f.label :showdate, "Date" %>
+  <%= f.date_field :showdate %>
+  <br>
+  <%= f.label :showtime, "Show" %>
+  <%= f.time_field :showtime %>
   <br>
   <%= f.label :artist %>
   <%= f.text_field :artist %>
@@ -24,7 +27,7 @@
   <%= f.text_field :city %>
   <br>
   <%= f.label :ticket %>
-  <%= f.number_field :ticket %>
+  <%= f.number_field :ticket, step: 0.01 %>
   <br>
   <%= f.label :description %>
   <%= f.text_area :description %>

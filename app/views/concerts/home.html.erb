@@ -1,7 +1,22 @@
-<h2>Today's Concerts</h2>
 
-<ul>
-	<% @today_concerts.each do |show| %>
-		<li><%= link_to(show.artist + " @ " + show.date.strftime("%H:%M%P"), new_concert_path(show.id))%></li>
-	<% end %>
-</ul>
+
+<div class="col-sm-9">
+<h2>Today's Concerts</h2>
+	<ul>
+		<% @today_concerts.each do |show| %>
+			<li>
+				<%= link_to(show.artist + " @ " + show.showtime.strftime("%I:%M %p"), new_concert_path(show.id))%>
+			</li>
+		<% end %>
+	</ul>
+</div>
+<div class="col-sm-3">
+	<h3><%= @date.strftime("%B") %> Concerts</h3>
+	<ul>
+		<% @month_concerts.each do |show| %>
+			<li>
+				<%= link_to(show.showdate.strftime("%m/%d") + " - " + show.artist, new_concert_path(show.id))%>
+			</li>
+		<% end %>
+	</ul>
+</div>
