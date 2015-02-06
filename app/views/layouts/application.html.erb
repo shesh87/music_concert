@@ -8,7 +8,37 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+	<div class="row header">
+		<div class="logo col-sm-12">
+			<h1>Welcome to Concert City!</h1>
+		</div>
+		<div class="navbar col-sm-12">
+			<ul class="list-inline">
+				<li><%= link_to("Home", @home)%></li>
+				<li><%= link_to("Add Concert", @concerts_new)%></li> | 
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<%= yield %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 
 </body>
 </html>
