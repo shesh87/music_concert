@@ -1,0 +1,23 @@
+<h1>Create Some Shit</h1>
+
+<%= form_for (@concert) do |f| %>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  <br>
+  <%= f.label :artist %>
+  <%= f.text_field :artist %>
+  <br>
+  <%= f.label :venue %>
+  <%= f.text_field :venue %>
+  <br>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+  <br>
+  <%= f.label :ticket %>
+  <%= f.number_field :ticket %>
+  <br>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <br>
+  <%= f.submit "Save"%>
+<% end %>
